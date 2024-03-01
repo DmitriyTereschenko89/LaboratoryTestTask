@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostedServiceXmlParser", "src\HostedServiceXmlParser\HostedServiceXmlParser.csproj", "{A019DCBC-805E-4256-B739-7A56526FB7C1}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{94298265-D4BD-4012-A03A-6CA000306057}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQ", "src\RabbitMQ\RabbitMQ.csproj", "{6BBF5D29-E81F-405F-AFB1-20CC60A05EEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.Messages", "src\EventBus.Messages\EventBus.Messages.csproj", "{051B6665-3621-4F77-8EB7-80836E3070EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataProcessor", "src\DataProcessor\DataProcessor.csproj", "{C6A6E2E6-F92F-425B-B202-4575AA6CCD54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqLite", "src\SqLite\SqLite.csproj", "{4AD0BDA9-3D0A-4ACC-A1CC-B9990649BABC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A019DCBC-805E-4256-B739-7A56526FB7C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A019DCBC-805E-4256-B739-7A56526FB7C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A019DCBC-805E-4256-B739-7A56526FB7C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A019DCBC-805E-4256-B739-7A56526FB7C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94298265-D4BD-4012-A03A-6CA000306057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94298265-D4BD-4012-A03A-6CA000306057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94298265-D4BD-4012-A03A-6CA000306057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94298265-D4BD-4012-A03A-6CA000306057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BBF5D29-E81F-405F-AFB1-20CC60A05EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BBF5D29-E81F-405F-AFB1-20CC60A05EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BBF5D29-E81F-405F-AFB1-20CC60A05EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BBF5D29-E81F-405F-AFB1-20CC60A05EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051B6665-3621-4F77-8EB7-80836E3070EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051B6665-3621-4F77-8EB7-80836E3070EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051B6665-3621-4F77-8EB7-80836E3070EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051B6665-3621-4F77-8EB7-80836E3070EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A6E2E6-F92F-425B-B202-4575AA6CCD54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A6E2E6-F92F-425B-B202-4575AA6CCD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A6E2E6-F92F-425B-B202-4575AA6CCD54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A6E2E6-F92F-425B-B202-4575AA6CCD54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AD0BDA9-3D0A-4ACC-A1CC-B9990649BABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AD0BDA9-3D0A-4ACC-A1CC-B9990649BABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AD0BDA9-3D0A-4ACC-A1CC-B9990649BABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AD0BDA9-3D0A-4ACC-A1CC-B9990649BABC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35BB2570-14FC-4C18-B9A3-B38D708B0D6B}
+	EndGlobalSection
+EndGlobal

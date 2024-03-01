@@ -1,0 +1,57 @@
+version: '3.4'
+
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    
+  # sqlitebrowser:
+  #   image: lscr.io/linuxserver/sqlitebrowser:latest
+  #   container_name: sqlitebrowser
+  #   security_opt:
+  #     - seccomp:unconfined #optional
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #     - TZ=Etc/UTC
+  #     - Logger:FilePath=/logs/logs.txt
+  #     - Database:Name=Data Source=./database.db
+  #   volumes:
+  #     - /path/to/config/mydatabase.db
+  #   ports:
+  #     - 3000:3000
+  #     - 3001:3001
+  #   restart: unless-stopped
+  
+  # hostedservicexmlparser:
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
+  #     - "RabbitMQ:HostName=192.168.0.113"
+  #     - "RabbitMQ:VHost=/"      
+  #     - "RabbitMQ:Username=guest"
+  #     - "RabbitMQ:Password=guest"
+  #   depends_on:
+  #     - rabbitmq
+  #   ports:
+  #     - "8000:80"  
+  
+  # dataprocessor:
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
+  #     - "RabbitMQ:HostName=10.80.89.3"
+  #     - "RabbitMQ:VHost=/"      
+  #     - "RabbitMQ:Username=guest"
+  #     - "RabbitMQ:Password=guest"
+  #   depends_on:
+  #     - rabbitmq
+  #     - mysqldb
+  #   ports:
+  #     - "8001:80"  
+
+# volumes:
+#   sqlite_data:
+#     external: true
+  

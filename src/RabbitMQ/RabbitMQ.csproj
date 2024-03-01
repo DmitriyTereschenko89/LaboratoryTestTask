@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="$(MSBuildThisFileDirectory)../../shared/shared.csproj" />
+
+    <ItemGroup>
+        <PackageReference Include="EasyNetQ" />
+        <PackageReference Include="EasyNetQ.DI.Microsoft" />
+        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
+        <PackageReference Include="Newtonsoft.Json" />
+        <PackageReference Include="System.Diagnostics.DiagnosticSource" />
+        <PackageReference Include="System.Text.Encodings.Web" />
+    </ItemGroup>
+</Project>
