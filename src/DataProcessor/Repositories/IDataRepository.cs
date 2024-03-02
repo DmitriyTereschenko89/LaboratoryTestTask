@@ -5,8 +5,8 @@ namespace DataProcessor.Repositories;
 
 public interface IDataRepository
 {
-    Task<bool> AddAsync(ModelEntity entity);
-    Task<bool> AddRangeAsync(List<ModelEntity> items);
+    Task<bool> AddAsync(DeviceStatusEntity entity);
+    Task<bool> AddRangeAsync(List<DeviceStatusEntity> items);
 
-    Task<IEnumerable<ModelEntity>> GetModelsAsync(Expression<Func<ModelEntity, bool>> predicate = null);
+    Task<IEnumerable<DeviceStatusEntity>> GetModelsAsync(Expression<Func<DeviceStatusEntity, bool>> predicate = null);
 }

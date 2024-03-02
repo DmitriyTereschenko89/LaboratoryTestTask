@@ -12,12 +12,12 @@ public class DataRepository : IDataRepository
         _dbContext = dbContext;
     }
 
-    public async Task<bool> AddAsync(ModelEntity entity)
+    public async Task<bool> AddAsync(DeviceStatusEntity entity)
     {
-        var modelEntity = _dbContext.Models.Where(model => model.ModuleCategoryID == entity.ModuleCategoryID).FirstOrDefault();
+        var modelEntity = _dbContext.DeviceStatuses.Where(model => model.ModuleCategoryID == entity.ModuleCategoryID).FirstOrDefault();
         if (modelEntity is null)
         {
-            _dbContext.Models.Add(entity);
+            _dbContext.DeviceStatuses.Add(entity);
         }
         else
         {
@@ -28,7 +28,7 @@ public class DataRepository : IDataRepository
         return true;
     }
 
-    public async Task<bool> AddRangeAsync(List<ModelEntity> items)
+    public async Task<bool> AddRangeAsync(List<DeviceStatusEntity> items)
     {
         foreach (var item in items)
         {
@@ -37,8 +37,8 @@ public class DataRepository : IDataRepository
         return true;
     }
 
-    public async Task<IEnumerable<ModelEntity>> GetModelsAsync(Expression<Func<ModelEntity, bool>> predicate = null)
+    public async Task<IEnumerable<DeviceStatusEntity>> GetModelsAsync(Expression<Func<DeviceStatusEntity, bool>> predicate = null)
     {
-        return await _dbContext.Models.Where(predicate).ToListAsync();
+        return await _dbContext.DeviceStatuses.Where(predicate).ToListAsync();
     }
 }

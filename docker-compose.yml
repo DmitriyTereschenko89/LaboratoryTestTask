@@ -10,11 +10,12 @@ services:
   #     context: .
   #     dockerfile: src/HostedServiceXmlParser/Dockerfile  
   
-  # dataprocessor:
-  #   image: ${DOCKER_REGISTRY-}dataprocessor
-  #   build:
-  #     context: .
-  #     dockerfile: src/DataProcessor/Dockerfile
+#   dataprocessor:
+#     image: ${DOCKER_REGISTRY-}dataprocessor
+#     build:
+#       context: .
+#       dockerfile: src/DataProcessor/Dockerfile
 
 # volumes:
-#   sqlite_data: 
+#   sqlite_data:
+#     external: true

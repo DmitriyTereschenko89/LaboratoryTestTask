@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DataProcessor.Entities;
 
-public class ModelEntity
+public class DeviceStatusEntity
 {
     [Key]
     public string ModuleCategoryID { get; set; }

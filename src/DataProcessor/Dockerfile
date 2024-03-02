@@ -7,22 +7,21 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["shared/shared.csproj", "./shared/"]
 COPY ["Directory.Packages.props", "."]
-COPY ["src/HostedServiceXmlParser/HostedServiceXmlParser.csproj", "src/HostedServiceXmlParser/"]
-COPY ["src/HostedServiceXmlParser/Files/status1.xml", "src/HostedServiceXmlParser/Files/"]
+COPY ["src/DataProcessor/DataProcessor.csproj", "src/DataProcessor/"]
 COPY ["src/EventBus.Messages/EventBus.Messages.csproj", "src/EventBus.Messages/"]
 COPY ["src/RabbitMQ/RabbitMQ.csproj", "src/RabbitMQ/"]
-RUN dotnet restore "./src/HostedServiceXmlParser/HostedServiceXmlParser.csproj"
+COPY ["src/SqLite/SqLite.csproj", "src/SqLite/"]
+RUN dotnet restore "./src/DataProcessor/DataProcessor.csproj"
 COPY . .
-WORKDIR "/src/src/HostedServiceXmlParser"
-RUN dotnet build "./HostedServiceXmlParser.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/src/DataProcessor"
+RUN dotnet build "./DataProcessor.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./HostedServiceXmlParser.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./DataProcessor.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "HostedServiceXmlParser.dll"]
+ENTRYPOINT ["dotnet", "DataProcessor.dll"]

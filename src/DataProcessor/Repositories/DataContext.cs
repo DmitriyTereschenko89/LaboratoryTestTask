@@ -27,5 +27,5 @@ public class DataContext : DbContext
 		}
 	}
 
-	public DbSet<ModelEntity> Models { get; set; }
+	public DbSet<DeviceStatusEntity> DeviceStatuses { get; set; }
 }

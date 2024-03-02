@@ -28,7 +28,7 @@ public class ProcessDataUpdate : IProcessDataUpdate
             {
                 var deviceStatuses = JsonConvert.DeserializeObject<List<DeviceStatus>>(msg.DeviceStatusesJson, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto });
                 _logger.LogInformation("CorrelationId: {id}. Start saving data to SqLite database.", msg.CorrelationId);
-                var items = _mapper.Map<List<ModelEntity>>(deviceStatuses);
+                var items = _mapper.Map<List<DeviceStatusEntity>>(deviceStatuses);
                 await _dataRepository.AddRangeAsync(items);
                 return true;
             }

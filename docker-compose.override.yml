@@ -17,10 +17,8 @@ services:
   #     - PUID=1000
   #     - PGID=1000
   #     - TZ=Etc/UTC
-  #     - Logger:FilePath=/logs/logs.txt
-  #     - Database:Name=Data Source=./database.db
   #   volumes:
-  #     - /path/to/config/mydatabase.db
+  #     - / config/mydatabase/mydatabase.db
   #   ports:
   #     - 3000:3000
   #     - 3001:3001
@@ -38,20 +36,19 @@ services:
   #   ports:
   #     - "8000:80"  
   
-  # dataprocessor:
-  #   environment:
-  #     - ASPNETCORE_ENVIRONMENT=Development
-  #     - "RabbitMQ:HostName=10.80.89.3"
-  #     - "RabbitMQ:VHost=/"      
-  #     - "RabbitMQ:Username=guest"
-  #     - "RabbitMQ:Password=guest"
-  #   depends_on:
-  #     - rabbitmq
-  #     - mysqldb
-  #   ports:
-  #     - "8001:80"  
+#   dataprocessor:
+#     environment:
+#       - ASPNETCORE_ENVIRONMENT=Development
+#       - "RabbitMQ:HostName=192.168.0.113"
+#       - "RabbitMQ:VHost=/"      
+#       - "RabbitMQ:Username=guest"
+#       - "RabbitMQ:Password=guest"
+#     depends_on:
+#       - rabbitmq
+#       - sqlitedb
+#     ports:
+#       - "8001:80"  
 
 # volumes:
 #   sqlite_data:
 #     external: true
-  
