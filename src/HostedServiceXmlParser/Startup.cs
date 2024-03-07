@@ -23,7 +23,6 @@ namespace HostedServiceXmlParser;
 				throw new SettingsPropertyNotFoundException($"{nameof(RabbitMqOptions)} config is not configured");
 			var t = services.AddRabbitMQ(rabbitMqOptions);
 
-			services.AddSingleton<ICreateClass, CreateClass>();
 			services.AddSingleton<IDataService, DataService>();
 			services.AddSingleton<IWorker, Worker>();
 			services.AddTransient<IMessageService, MessageService>();

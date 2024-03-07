@@ -1,13 +1,23 @@
-namespace EventBus.Messages.Models;
+using System.Xml.Serialization;
 
+namespace EventBus.Messages.Models;
+[XmlRoot("CombinedSamplerStatus")]
 public class CombinedSamplerStatus : RapidControlStatus
 	{
-		public int Status { get; set; }
-		public string Vial { get; set; }
-		public int Volume { get; set; }
-		public int MaximumInjectionVolume { get; set; }
-		public string RackL { get; set; }
-		public string RackR { get; set; }
-		public int RackInf { get; set; }
-		public bool Buzzer { get; set; }
+    [XmlElement("Status")]
+    public int Status { get; set; }
+    [XmlElement("Vial")]
+    public string Vial { get; set; }
+    [XmlElement("Volume")]
+    public int Volume { get; set; }
+    [XmlElement("MaximumInjectionVolume")]
+    public int MaximumInjectionVolume { get; set; }
+    [XmlElement("RackL")]
+    public string RackL { get; set; }
+    [XmlElement("RackR")]
+    public string RackR { get; set; }
+    [XmlElement("RackInf")]
+    public int RackInf { get; set; }
+    [XmlElement("Buzzer")]
+    public bool Buzzer { get; set; }
 	}
